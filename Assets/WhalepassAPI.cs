@@ -51,7 +51,7 @@ public class WhalePassAPI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
             RedirectPlayer_Rewards();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             AddExp(500);
             PlayerBaseResponse();

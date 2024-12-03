@@ -354,7 +354,7 @@ namespace InfimaGames.LowPolyShooterPack
 		/// <summary>
 		/// Refresh all weapon things to make sure we're all set up!
 		/// </summary>
-		private void RefreshWeaponSetup()
+		public void RefreshWeaponSetup()
 		{
 			//Make sure we have a weapon. We don't want errors!
 			if ((equippedWeapon = inventory.GetEquipped()) == null)

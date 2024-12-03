@@ -23,21 +23,36 @@ namespace InfimaGames.LowPolyShooterPack
         private int equippedIndex = -1;
 
         #endregion
-        
+
         #region METHODS
-        
+        public WeaponSelectionManager weaponSelectionManager;
         public override void Init(int equippedAtStart = 0)
         {
+            
             //Cache all weapons. Beware that weapons need to be parented to the object this component is on!
             weapons = GetComponentsInChildren<WeaponBehaviour>(true);
-            
+            //weaponSelectionManager.CheckWeaponUnlocks();
             //Disable all weapons. This makes it easier for us to only activate the one we need.
             foreach (WeaponBehaviour weapon in weapons)
                 weapon.gameObject.SetActive(false);
-
+            
+            if(weaponSelectionManager.currentSelectedWeaponIndex == 0)
+            {
+                //LeanTween.delayedCall(0.5f, () => {  character.RefreshWeaponSetup(); character.RefreshWeaponSetup(); });
+                Equip(equippedAtStart);
+                weapons[0].gameObject.SetActive(true);
+                character.RefreshWeaponSetup();
+            }
+            else
+            {
+                LeanTween.delayedCall(0.5f, () => { Equip(weaponSelectionManager.currentSelectedWeaponIndex); character.RefreshWeaponSetup(); });
+            }
             //Equip.
-            Equip(equippedAtStart);
+           
+           
         }
+        public Character character;
+        protected virtual void Tick() { }
         private void Update()
         {
             

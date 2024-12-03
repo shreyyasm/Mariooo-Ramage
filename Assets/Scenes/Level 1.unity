@@ -17585,6 +17585,7 @@ MonoBehaviour:
     magazineSize: 0
   weaponNameText: {fileID: 0}
   selectButton: {fileID: 0}
+  selectedButtontext: {fileID: 0}
   lockedButton: {fileID: 0}
   SelectedTick: {fileID: 0}
   leftArrowButton: {fileID: 0}
@@ -17597,8 +17598,9 @@ MonoBehaviour:
   lockedParent: {fileID: 1032136101}
   unlockLevelText: {fileID: 0}
   currentIndex: 0
+  currentSelectedWeaponIndex: 0
   MainMenu: 0
-  inventory: {fileID: 0}
+  inventory: {fileID: 3860609216266240654}
   weaponsPrefabs:
   - {fileID: 1023192395}
   - {fileID: 7926963384435250202}
@@ -29787,6 +29789,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c368290cc3e914ab3a0cf540de2166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSelectionManager: {fileID: 1387286283}
+  character: {fileID: 4113952420162717860}
 --- !u!33 &3904768103704439809
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -29934,7 +29938,7 @@ MonoBehaviour:
   holdingButtonRun: 0
   cameraShake: {fileID: 2159460449521917206}
   gunhand1: {fileID: 9075549173343227875}
-  gunhand2: {fileID: 0}
+  gunhand2: {fileID: 9075549173343227875}
 --- !u!1 &4118684211010843665
 GameObject:
   m_ObjectHideFlags: 0

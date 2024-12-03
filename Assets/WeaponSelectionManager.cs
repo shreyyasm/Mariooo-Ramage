@@ -111,7 +111,7 @@ public class WeaponSelectionManager : MonoBehaviour
                     return;
                 weaponsPrefabs[weapon.weaponID].transform.SetParent(unlockedParent);
                 //weapon.weaponPrefab.transform.SetParent(unlockedParent);               
-                //inventory.Init();
+                inventory.Init();
                 Debug.Log("worked");
             }
             else if (!weapon.isUnlocked)

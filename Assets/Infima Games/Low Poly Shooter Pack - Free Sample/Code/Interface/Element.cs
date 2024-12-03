@@ -60,8 +60,8 @@ namespace InfimaGames.LowPolyShooterPack.Interface
             //Get Equipped Weapon.
             equippedWeapon = playerCharacterInventory.GetEquipped();
             
-            //Tick.
-            Tick();
+            if(equippedWeapon != null)
+                Tick();
         }
 
         #endregion
