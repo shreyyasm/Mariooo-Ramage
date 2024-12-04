@@ -14,13 +14,27 @@ public class WhalePassAPI : MonoBehaviour
 
     public string playerId = "";
 
-    public int CurrentLevel;
+    public int currentLevel;
     public int CurrentTotalExp;
     public int CurrentExp;
     public int NextLevelExp;
     public int ExpRequiredLastlevel;
 
     public LevelManager levelManager;
+    public int CurrentLevel
+    {
+        get => currentLevel;
+        set
+        {
+            if (currentLevel != value) // Only trigger when the value actually changes
+            {
+                currentLevel = value;
+                OnLevelChanged?.Invoke(currentLevel); // Trigger event
+            }
+        }
+    }
+    // Event triggered when the level changes
+    public event Action<int> OnLevelChanged;
     private void Awake()
     {
         if(instance == null)
@@ -51,9 +65,9 @@ public class WhalePassAPI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
             RedirectPlayer_Rewards();
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            AddExp(500);
+            AddExp(400);
             PlayerBaseResponse();
             LevelManager.Instance.UpdateUI();
             WeaponSelectionManager.instance.CheckWeaponUnlocks();
@@ -125,10 +139,12 @@ public class WhalePassAPI : MonoBehaviour
             Debug.Log(response.responseBody);
         });
     }
+ 
     public void PlayerBaseResponse()
     {
         WhalepassSdkManager.getPlayerBaseProgress(playerId, response =>
         {
+            
             Debug.Log(response.succeed);
             Debug.Log(response.responseBody);
             Debug.Log(response.result.expRequiredForNextLevel);
@@ -137,6 +153,8 @@ public class WhalePassAPI : MonoBehaviour
             CurrentLevel = (int)response.result.lastCompletedLevel;
             CurrentExp = (int)response.result.currentExp - (int)response.result.expRequiredForLastLevel;
             ExpRequiredLastlevel = (int)response.result.expRequiredForLastLevel;
+            levelManager._playerLevel = (int)response.result.lastCompletedLevel;
+            
         });
     }
 }

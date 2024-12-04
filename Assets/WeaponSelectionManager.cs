@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using TMPro;
 using InfimaGames.LowPolyShooterPack;
 using static WeaponSelectionManager;
+using UnityEngine.TextCore.Text;
+using System.Linq;
 
 public class WeaponSelectionManager : MonoBehaviour
 {
@@ -68,6 +70,8 @@ public class WeaponSelectionManager : MonoBehaviour
 
         // Ensure only the current weapon's prefab is active at the start
         UpdateWeaponDisplay();
+        LeanTween.delayedCall(0.5f, () => { DisplayNextUnlockableWeapon(); });
+        
     }
 
     void SelectPreviousWeapon()
@@ -97,11 +101,13 @@ public class WeaponSelectionManager : MonoBehaviour
     }
     public Inventory inventory;
     public List<GameObject> weaponsPrefabs;
+    public int NewUnlockedWeaponNumber;
+    public bool activeGunchange;
     public void CheckWeaponUnlocks()
     {
         foreach (var weapon in weapons)
         {
-            if (LevelManager.Instance.playerLevel >= weapon.requiredLevel)
+            if (levelManager._playerLevel >= weapon.requiredLevel)
             {
                 // Mark weapon as unlocked
                 weapon.isUnlocked = true;
@@ -110,9 +116,17 @@ public class WeaponSelectionManager : MonoBehaviour
                 if (MainMenu)
                     return;
                 weaponsPrefabs[weapon.weaponID].transform.SetParent(unlockedParent);
-                //weapon.weaponPrefab.transform.SetParent(unlockedParent);               
-                inventory.Init();
-                Debug.Log("worked");
+                NewUnlockedWeaponNumber = weapon.weaponID;
+                //weapon.weaponPrefab.transform.SetParent(unlockedParent);
+               
+                    inventory.Init();
+                    activeGunchange = true;
+                
+                    //GrabNewestWeapon(weapons[NewUnlockedWeaponNumber].weaponID);
+                
+                
+               
+
             }
             else if (!weapon.isUnlocked)
             {
@@ -122,11 +136,51 @@ public class WeaponSelectionManager : MonoBehaviour
                 weapon.weaponPrefab.transform.SetParent(lockedParent);
             }
         }
-
+        // Update weapon unlocks and UI
+        DisplayNextUnlockableWeapon();
         // Update the UI after processing all weapons
         UpdateUI();
     }
+    public void CheckWeaponUnlocksAndSelectsNew()
+    {
+        foreach (var weapon in weapons)
+        {
+            if (levelManager._playerLevel >= weapon.requiredLevel)
+            {
+                // Mark weapon as unlocked
+                weapon.isUnlocked = true;
 
+                // Move the weapon object to the unlocked parent
+                if (MainMenu)
+                    return;
+                weaponsPrefabs[weapon.weaponID].transform.SetParent(unlockedParent);
+                NewUnlockedWeaponNumber = weapon.weaponID;
+             
+                GrabNewestWeapon(weapons[NewUnlockedWeaponNumber].weaponID);
+
+
+
+
+            }
+            else if (!weapon.isUnlocked)
+            {
+                // Ensure locked weapons are under the locked parent
+                if (MainMenu)
+                    return;
+                weapon.weaponPrefab.transform.SetParent(lockedParent);
+            }
+        }
+        // Update weapon unlocks and UI
+        DisplayNextUnlockableWeapon();
+        // Update the UI after processing all weapons
+        UpdateUI();
+    }
+    public void GrabNewestWeapon(int index)
+    {
+        
+        inventory.ChecksForNewWeapon(index);
+        UpdateWeaponDisplay();
+    }
     public void UpdateUI()
     {
         if (weaponNameText != null)
@@ -183,18 +237,20 @@ public class WeaponSelectionManager : MonoBehaviour
 
             // Update weapon prefab display
             UpdateWeaponDisplay();
+            InitializeWeaponUnlocks();
+            DisplayNextUnlockableWeapon();
         }
 
     }
 
     void UnlockWeaponBasedOnLevel(Weapon weapon)
     {
-        if (!weapon.isUnlocked && LevelManager.Instance.playerLevel >= weapon.requiredLevel)
+        if (!weapon.isUnlocked && LevelManager.Instance._playerLevel >= weapon.requiredLevel)
         {
             weapon.isUnlocked = true;
             PlayerPrefs.SetInt(WeaponUnlockedKeyPrefix + weapon.weaponID, 1);
             PlayerPrefs.Save();
-            Debug.Log($"{weapon.weaponName} unlocked at level {LevelManager.Instance.playerLevel}!");
+            Debug.Log($"{weapon.weaponName} unlocked at level {LevelManager.Instance._playerLevel}!");
         }
     }
 
@@ -218,4 +274,76 @@ public class WeaponSelectionManager : MonoBehaviour
             currentSelectedWeaponIndex = PlayerPrefs.GetInt(SelectedWeaponKey);
         }
     }
+    [System.Serializable]
+    public class WeaponUI
+    {
+        public GameObject weaponObject; // The weapon GameObject
+        public int unlockLevel; // Level required to unlock the weapon
+        public bool isUnlocked; // Whether the weapon is unlocked
+        public GameObject weaponUI; // The associated UI element
+    }
+    public List<WeaponUI> weaponUIList; // List of all weapon UI elements
+    public TextMeshProUGUI nextUnlockText; // Text to display next unlock level
+    public LevelManager levelManager;
+ 
+    // Ensure the weapons' unlock status is correctly initialized
+    private void InitializeWeaponUnlocks()
+    {
+        foreach (var weaponUI in weaponUIList)
+        {
+            // Unlock weapons if the player's level is greater than or equal to the weapon's unlock level
+            if (levelManager._playerLevel >= weaponUI.unlockLevel)
+            {
+                weaponUI.isUnlocked = true; // Mark as unlocked
+                weaponUI.weaponObject.SetActive(true); // Show the weapon
+                weaponUI.weaponUI.SetActive(false); // Hide the "locked" UI
+              
+            }
+            else
+            {
+                weaponUI.isUnlocked = false; // Mark as locked
+                weaponUI.weaponObject.SetActive(false); // Hide the weapon
+                weaponUI.weaponUI.SetActive(true); // Show the "locked" UI
+            }
+        }
+    }
+    public void DisplayNextUnlockableWeapon()
+    {
+        if (MainMenu)
+            return;
+
+        WeaponUI nextUnlockableWeapon = null;
+
+        // Find the next weapon that the player can unlock after their current level
+        foreach (var weaponUI in weaponUIList)
+        {
+            if (!weaponUI.isUnlocked && weaponUI.unlockLevel > levelManager._playerLevel &&
+                (nextUnlockableWeapon == null || weaponUI.unlockLevel < nextUnlockableWeapon.unlockLevel))
+            {
+                nextUnlockableWeapon = weaponUI;
+            }
+        }
+
+        // Update the UI
+        if (nextUnlockableWeapon != null)
+        {
+            // Show the next weapon to unlock
+            nextUnlockText.text = $"Unlocks at {nextUnlockableWeapon.unlockLevel}";
+            foreach (var weaponUI in weaponUIList)
+            {
+                weaponUI.weaponUI.SetActive(weaponUI == nextUnlockableWeapon);
+            }
+        }
+        else
+        {
+            // If no more weapons can be unlocked, display "All weapons unlocked!"
+            nextUnlockText.text = "All weapons unlocked!";
+            foreach (var weaponUI in weaponUIList)
+            {
+                weaponUI.weaponUI.SetActive(false);
+            }
+        }
+    }
+
+
 }

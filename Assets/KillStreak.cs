@@ -52,7 +52,7 @@ public class KillStreak : MonoBehaviour
         startTimer = true;
         resetTimer = 5f;
         KillStreakSound(KillStreakNum);
-        WhalePassAPI.instance.AddExp(30);
+        WhalePassAPI.instance.AddExp(200);
         WhalePassAPI.instance.PlayerBaseResponse();
         LevelManager.Instance.UpdateUI();
     }

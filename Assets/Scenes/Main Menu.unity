@@ -6466,6 +6466,11 @@ MonoBehaviour:
   MainMenu: 1
   inventory: {fileID: 0}
   weaponsPrefabs: []
+  NewUnlockedWeaponNumber: 0
+  activeGunchange: 0
+  weaponUIList: []
+  nextUnlockText: {fileID: 0}
+  levelManager: {fileID: 1514354639}
 --- !u!114 &1514354639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6478,7 +6483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992ec9faedba61f4fae7a005bb8aa480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLevel: 0
+  _playerLevel: 0
   totalXP: 100
   xpToNextLevel: 100
   remainingXP: 0
@@ -8647,7 +8652,7 @@ MonoBehaviour:
   ApiKey: f2ad3b91a63620ccba2a14a5ff110b1c
   BattlePassId: 4b835c56-fed5-4c8e-a269-4f6f1e9ebd50
   playerId: 
-  CurrentLevel: 0
+  currentLevel: 0
   CurrentTotalExp: 0
   CurrentExp: 0
   NextLevelExp: 0

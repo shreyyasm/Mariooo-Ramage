@@ -1,5 +1,6 @@
 ﻿// Copyright 2021, Infima Games. All Rights Reserved.
 
+using System;
 using UnityEngine;
 
 namespace InfimaGames.LowPolyShooterPack
@@ -45,10 +46,24 @@ namespace InfimaGames.LowPolyShooterPack
             }
             else
             {
-                LeanTween.delayedCall(0.5f, () => { Equip(weaponSelectionManager.currentSelectedWeaponIndex); character.RefreshWeaponSetup(); });
+                LeanTween.delayedCall(0.5f, () => { Equip(weaponSelectionManager.currentSelectedWeaponIndex); weapons[weaponSelectionManager.currentSelectedWeaponIndex].gameObject.SetActive(true); character.RefreshWeaponSetup(); });
             }
             //Equip.
            
+           
+        }
+        public void ChecksForNewWeapon(int index)
+        {
+            weapons = GetComponentsInChildren<WeaponBehaviour>(true);
+            //weaponSelectionManager.CheckWeaponUnlocks();
+            //Disable all weapons. This makes it easier for us to only activate the one we need.
+            foreach (WeaponBehaviour weapon in weapons)
+                weapon.gameObject.SetActive(false);
+            LeanTween.delayedCall(0.2f, () => {
+                Equip(index);
+                weapons[index].gameObject.SetActive(true);
+                character.RefreshWeaponSetup();
+            });
            
         }
         public Character character;

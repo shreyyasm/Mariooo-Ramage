@@ -8,7 +8,8 @@ using UnityEngine.Networking;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
-    public int playerLevel = 0; // Start level
+  
+    public int _playerLevel = 0; // Start level
     public int totalXP = 0; // Total experience
     public int xpToNextLevel = 100; // XP required for the next level
     public int remainingXP = 0; // The leftover XP after leveling up
@@ -17,7 +18,6 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI xpText; // Text to display current XP
     public Slider xpSlider; // Slider to visually represent XP progress
     public Slider GameXpSlider;
-
    public WeaponSelectionManager weaponSelectionManager; // Reference to the weapon manager
     private void Awake()
     {
@@ -36,7 +36,7 @@ public class LevelManager : MonoBehaviour
         }
         // Get a reference to the WeaponSelectionManager
 
-      
+        WhalePassAPI.instance.OnLevelChanged += HandleLevelChange;
         weaponSelectionManager.CheckWeaponUnlocks();
         UpdateUI();
 
@@ -64,20 +64,15 @@ public class LevelManager : MonoBehaviour
 
     public void GetPlayerDetails()
     {
-        playerLevel = WhalePassAPI.CurrentLevel;
+        _playerLevel = WhalePassAPI.CurrentLevel;
         xpToNextLevel = WhalePassAPI.NextLevelExp;
         totalXP = WhalePassAPI.CurrentExp;
         
     }
     void WeaponCheck()
     {
-   
-
         // Check for weapon unlocks based on the new level
         weaponSelectionManager.CheckWeaponUnlocks();
-
-        // Update the UI with the new level and XP values
-        UpdateUI();
     }
 
   
@@ -96,6 +91,17 @@ public class LevelManager : MonoBehaviour
 
         xpSlider.value = targetXP; // Ensure the final value is accurate
     }
-   
 
+    private void HandleLevelChange(int newLevel)
+    {
+        Debug.Log($"Player level changed to: {newLevel}");
+        GetPlayerDetails();
+        WeaponCheck();
+        weaponSelectionManager.CheckWeaponUnlocksAndSelectsNew();
+
+
+        UpdateUI();
+    }
+
+    
 }
