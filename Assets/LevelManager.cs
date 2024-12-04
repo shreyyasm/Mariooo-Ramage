@@ -48,16 +48,26 @@ public class LevelManager : MonoBehaviour
     {
         if (xpSlider != null)
         {
-            levelText.text = $"Level: {WhalePassAPI.CurrentLevel}";
-            xpText.text = $"Next Level: {WhalePassAPI.CurrentExp} / { WhalePassAPI.NextLevelExp - WhalePassAPI.ExpRequiredLastlevel}";
-            if (GameXpSlider != null)
+            if(WhalePassAPI.CurrentLevel < 10)
             {
-                GameXpSlider.maxValue = WhalePassAPI.NextLevelExp - WhalePassAPI.ExpRequiredLastlevel;
-                GameXpSlider.value = WhalePassAPI.CurrentExp;
+                levelText.text = $"Level: {WhalePassAPI.CurrentLevel}";
+                xpText.text = $"Next Level: {WhalePassAPI.CurrentExp} / {WhalePassAPI.NextLevelExp - WhalePassAPI.ExpRequiredLastlevel}";
+                if (GameXpSlider != null)
+                {
+                    GameXpSlider.maxValue = WhalePassAPI.NextLevelExp - WhalePassAPI.ExpRequiredLastlevel;
+                    GameXpSlider.value = WhalePassAPI.CurrentExp;
+                }
+
+                weaponSelectionManager.UpdateUI();
+                StartCoroutine(UpdateXPBar(totalXP)); // Smoothly update the slider
+            }
+            else
+            {
+                levelText.text = $"Level: {WhalePassAPI.CurrentLevel}";
+                xpText.text = $"Levels Completed";
+                GameXpSlider.gameObject.SetActive(false);
             }
             
-            weaponSelectionManager.UpdateUI();
-            StartCoroutine(UpdateXPBar(totalXP)); // Smoothly update the slider
         }
             
     }
@@ -91,10 +101,16 @@ public class LevelManager : MonoBehaviour
 
         xpSlider.value = targetXP; // Ensure the final value is accurate
     }
-
+    public TextMeshProUGUI NewlevelReached;
+    public Animator Textanim;
     private void HandleLevelChange(int newLevel)
     {
         Debug.Log($"Player level changed to: {newLevel}");
+        NewlevelReached.enabled = true;
+        NewlevelReached.text = "Leveled Up: " + newLevel;
+        Textanim.SetBool("Play", true);
+
+        LeanTween.delayedCall(5f, () => { NewlevelReached.enabled = false; Textanim.SetBool("Play", false); });
         GetPlayerDetails();
         WeaponCheck();
         weaponSelectionManager.CheckWeaponUnlocksAndSelectsNew();
