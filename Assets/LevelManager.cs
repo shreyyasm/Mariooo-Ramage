@@ -103,7 +103,7 @@ public class LevelManager : MonoBehaviour
     }
     public TextMeshProUGUI NewlevelReached;
     public Animator Textanim;
-    public AudioClip LevelUpSFX;
+   
     
     private void HandleLevelChange(int newLevel)
     {
@@ -111,7 +111,7 @@ public class LevelManager : MonoBehaviour
         NewlevelReached.enabled = true;
         NewlevelReached.text = "Leveled Up: " + newLevel;
         Textanim.SetBool("Play", true);
-        AudioSource.PlayClipAtPoint(LevelUpSFX, Camera.main.transform.position);
+        
         LeanTween.delayedCall(5f, () => { NewlevelReached.enabled = false; Textanim.SetBool("Play", false); });
         GetPlayerDetails();
         WeaponCheck();
