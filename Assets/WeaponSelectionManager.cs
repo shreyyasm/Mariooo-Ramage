@@ -141,12 +141,15 @@ public class WeaponSelectionManager : MonoBehaviour
         // Update the UI after processing all weapons
         UpdateUI();
     }
+    public TextMeshProUGUI GunUnlockedTextShowCase;
     public void CheckWeaponUnlocksAndSelectsNew()
     {
         foreach (var weapon in weapons)
         {
             if (levelManager._playerLevel >= weapon.requiredLevel)
             {
+              
+
                 // Mark weapon as unlocked
                 weapon.isUnlocked = true;
 
@@ -156,10 +159,15 @@ public class WeaponSelectionManager : MonoBehaviour
                 weaponsPrefabs[weapon.weaponID].transform.SetParent(unlockedParent);
                 NewUnlockedWeaponNumber = weapon.weaponID;
              
+               
                 GrabNewestWeapon(weapons[NewUnlockedWeaponNumber].weaponID);
 
-
-
+                if (weapon.isUnlocked && levelManager._playerLevel == weapon.requiredLevel)
+                {
+                    GunUnlockedTextShowCase.enabled = true;
+                    GunUnlockedTextShowCase.text = "Unlocked: " + weapon.weaponName;
+                    LeanTween.delayedCall(5f, () => { GunUnlockedTextShowCase.enabled = false; });
+                }
 
             }
             else if (!weapon.isUnlocked)
@@ -285,7 +293,7 @@ public class WeaponSelectionManager : MonoBehaviour
     public List<WeaponUI> weaponUIList; // List of all weapon UI elements
     public TextMeshProUGUI nextUnlockText; // Text to display next unlock level
     public LevelManager levelManager;
- 
+    
     // Ensure the weapons' unlock status is correctly initialized
     private void InitializeWeaponUnlocks()
     {
