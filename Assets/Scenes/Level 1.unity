@@ -3552,7 +3552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965555d451af4a2299927c4e3dd7ee09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammunitionTotal: 60
+  ammunitionTotal: 50
   sprite: {fileID: 21300000, guid: 51d720b69910c244aa44a082bddf0155, type: 3}
 --- !u!23 &164826650
 MeshRenderer:
@@ -15205,7 +15205,7 @@ MonoBehaviour:
   audioClipReloadEmpty: {fileID: 8300000, guid: 1fe5c2e1733f354428fe88c1a7cbafe4,
     type: 3}
   audioClipFireEmpty: {fileID: 8300000, guid: 0c187ee2790c74c4e9985aa1ee1a12d5, type: 3}
-  BulletPool: {fileID: 11400000, guid: f969d5782562f9a439a48e3571a4ec1d, type: 2}
+  BulletPool: {fileID: 11400000, guid: ddf2c8debeb9ea14aabf0588b98708a3, type: 2}
   dualGun: 0
   dualGunpoint: {fileID: 0}
 --- !u!95 &1325101911
@@ -16881,6 +16881,8 @@ MonoBehaviour:
   WhalePassAPI: {fileID: 1573068864}
   NewlevelReached: {fileID: 966777084}
   Textanim: {fileID: 966777086}
+  LevelUpSFX: {fileID: 8300000, guid: 8919d3097dc8d434ab0b2ba76445de53, type: 3}
+  GunUnlockedSFX: {fileID: 0}
 --- !u!114 &1387286283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16951,6 +16953,8 @@ MonoBehaviour:
   currentIndex: 0
   currentSelectedWeaponIndex: 0
   MainMenu: 0
+  NextWeaponButonSFX: {fileID: 0}
+  WeaponSelectedButonSFX: {fileID: 0}
   inventory: {fileID: 3860609216266240654}
   weaponsPrefabs:
   - {fileID: 1023192395}
@@ -20141,13 +20145,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651467694}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1662308756}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1653565373
 GameObject:
   m_ObjectHideFlags: 0
@@ -20279,7 +20283,7 @@ Transform:
   m_GameObject: {fileID: 1662308755}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.03, y: -1.72, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20300,7 +20304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   socket: {fileID: 1651467695}
   sprite: {fileID: 0}
-  audioClipFire: {fileID: 8300000, guid: 8d55e1528d3604545b50acbcaccffa2f, type: 3}
+  audioClipFire: {fileID: 8300000, guid: ba4a01342b820654bb84a684e7d77692, type: 3}
   prefabFlashParticles: {fileID: 4834526503407549940, guid: 2735bebe54c1f5a4096f5134a96f7e77,
     type: 3}
   flashParticlesCount: 5
@@ -24834,7 +24838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   automatic: 1
   projectileImpulse: 400
-  roundsPerMinutes: 750
+  roundsPerMinutes: 850
   mask:
     serializedVersion: 2
     m_Bits: 1
@@ -24842,7 +24846,7 @@ MonoBehaviour:
   socketEjection: {fileID: 1109149967}
   prefabCasing: {fileID: 1492315059354262, guid: c638dfae3f3edf843b2614dae230a771,
     type: 3}
-  prefabProjectile: {fileID: 1523153560657062, guid: 3e6f7ad5d652bae45a7b086fc057522a,
+  prefabProjectile: {fileID: 1523153560657062, guid: e791bce961c856c48a4aaf3bf189e3aa,
     type: 3}
   controller: {fileID: 22100000, guid: 1288116e5192cd84b808721e453eb7e7, type: 2}
   spriteBody: {fileID: 21300000, guid: 83bd180441453a843bfad2339dc2d457, type: 3}
@@ -24852,7 +24856,7 @@ MonoBehaviour:
   audioClipReloadEmpty: {fileID: 8300000, guid: 1fe5c2e1733f354428fe88c1a7cbafe4,
     type: 3}
   audioClipFireEmpty: {fileID: 8300000, guid: 0c187ee2790c74c4e9985aa1ee1a12d5, type: 3}
-  BulletPool: {fileID: 11400000, guid: f969d5782562f9a439a48e3571a4ec1d, type: 2}
+  BulletPool: {fileID: 11400000, guid: eb8edabf9c09f2f4bb5b48ab64398b33, type: 2}
   dualGun: 0
   dualGunpoint: {fileID: 0}
 --- !u!95 &2066032481

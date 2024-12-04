@@ -6464,10 +6464,14 @@ MonoBehaviour:
   currentIndex: 0
   currentSelectedWeaponIndex: 0
   MainMenu: 1
+  NextWeaponButonSFX: {fileID: 8300000, guid: c3daf23631f8885449c690175c3289bd, type: 3}
+  WeaponSelectedButonSFX: {fileID: 8300000, guid: a1f092e1d00406742bd854f8952cda95,
+    type: 3}
   inventory: {fileID: 0}
   weaponsPrefabs: []
   NewUnlockedWeaponNumber: 0
   activeGunchange: 0
+  GunUnlockedTextShowCase: {fileID: 0}
   weaponUIList: []
   nextUnlockText: {fileID: 0}
   levelManager: {fileID: 1514354639}
@@ -6493,6 +6497,10 @@ MonoBehaviour:
   GameXpSlider: {fileID: 0}
   weaponSelectionManager: {fileID: 1514354638}
   WhalePassAPI: {fileID: 1988327958}
+  NewlevelReached: {fileID: 0}
+  Textanim: {fileID: 0}
+  LevelUpSFX: {fileID: 0}
+  GunUnlockedSFX: {fileID: 0}
 --- !u!1 &1521370547
 GameObject:
   m_ObjectHideFlags: 0
@@ -7506,7 +7514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1722465670
 AudioSource:
   m_ObjectHideFlags: 0

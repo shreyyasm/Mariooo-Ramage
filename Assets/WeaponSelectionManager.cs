@@ -52,6 +52,8 @@ public class WeaponSelectionManager : MonoBehaviour
 
     public bool MainMenu;
 
+    public AudioClip NextWeaponButonSFX;
+    public AudioClip WeaponSelectedButonSFX;
     private void Awake()
     {
         if (instance == null)
@@ -77,12 +79,14 @@ public class WeaponSelectionManager : MonoBehaviour
     void SelectPreviousWeapon()
     {
         currentIndex = (currentIndex - 1 + weapons.Count) % weapons.Count;
+        AudioSource.PlayClipAtPoint(NextWeaponButonSFX, Camera.main.transform.position);
         UpdateUI();
     }
 
     void SelectNextWeapon()
     {
         currentIndex = (currentIndex + 1) % weapons.Count;
+        AudioSource.PlayClipAtPoint(NextWeaponButonSFX, Camera.main.transform.position);
         UpdateUI();
     }
 
@@ -97,6 +101,7 @@ public class WeaponSelectionManager : MonoBehaviour
             currentSelectedWeaponIndex = currentWeapon.weaponID;
             PlayerPrefs.SetInt(SelectedWeaponKey, currentWeapon.weaponID);
             Debug.Log($"{currentWeapon.weaponName} selected!");
+            AudioSource.PlayClipAtPoint(WeaponSelectedButonSFX, Camera.main.transform.position);
         }
     }
     public Inventory inventory;
@@ -142,6 +147,7 @@ public class WeaponSelectionManager : MonoBehaviour
         UpdateUI();
     }
     public TextMeshProUGUI GunUnlockedTextShowCase;
+    public AudioClip GunUnlockedSFX;
     public void CheckWeaponUnlocksAndSelectsNew()
     {
         foreach (var weapon in weapons)
@@ -166,6 +172,7 @@ public class WeaponSelectionManager : MonoBehaviour
                 {
                     GunUnlockedTextShowCase.enabled = true;
                     GunUnlockedTextShowCase.text = "Unlocked: " + weapon.weaponName;
+                    AudioSource.PlayClipAtPoint(GunUnlockedSFX, Camera.main.transform.position);
                     LeanTween.delayedCall(5f, () => { GunUnlockedTextShowCase.enabled = false; });
                 }
 
