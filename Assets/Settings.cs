@@ -9,6 +9,7 @@ public class Settings : MonoBehaviour
     
     public GameObject mainScreen;   
     public GameObject optionsCanvas;
+    public GameObject BattlePassCanvas;
 
     public Slider volumeSlider;
     public Slider senstivitySlider;
@@ -87,18 +88,32 @@ public class Settings : MonoBehaviour
         SceneManager.LoadScene(1);
        
     }
+    public void OpenBattleButton()
+    {
+        // 
+        BattlePassCanvas.SetActive(true);
+
+    }
+    public void CloseBattlePass()
+    {
+        BattlePassCanvas.SetActive(false);
+    }
+    public void DiscoverGames()
+    {
+        WhalePassAPI.instance.RedirectPlayer_Rewards();
+    }
     public void CloseOptions()
     {
         optionsCanvas.SetActive(false);
     }
     public void OpenOptions()
     {
-        mainScreen.SetActive(false);
+        //mainScreen.SetActive(false);
         optionsCanvas.SetActive(true);
     }
     public void BackToMainScreen()
     {
-        mainScreen.SetActive(true);
+        //mainScreen.SetActive(true);
         optionsCanvas.SetActive(false);
     }
     public void OnApplicationQuit()

@@ -63,8 +63,7 @@ public class WhalePassAPI : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-            RedirectPlayer_Rewards();
+       
         if (Input.GetKeyDown(KeyCode.E))
         {
             AddExp(400);

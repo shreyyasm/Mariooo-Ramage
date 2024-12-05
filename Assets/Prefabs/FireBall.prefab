@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8836364054731021202}
   - component: {fileID: 7897155280886150589}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: FireBall
   m_TagString: Blood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

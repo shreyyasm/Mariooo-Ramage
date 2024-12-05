@@ -172,7 +172,9 @@ public class WeaponSelectionManager : MonoBehaviour
                 {
                     GunUnlockedTextShowCase.enabled = true;
                     GunUnlockedTextShowCase.text = "Unlocked: " + weapon.weaponName;
-                    AudioSource.PlayClipAtPoint(GunUnlockedSFX, Camera.main.transform.position);
+                    
+                    
+                    //AudioSource.PlayClipAtPoint(GunUnlockedSFX, Camera.main.transform.position);
                     LeanTween.delayedCall(5f, () => { GunUnlockedTextShowCase.enabled = false; });
                 }
 
@@ -260,12 +262,12 @@ public class WeaponSelectionManager : MonoBehaviour
 
     void UnlockWeaponBasedOnLevel(Weapon weapon)
     {
-        if (!weapon.isUnlocked && LevelManager.Instance._playerLevel >= weapon.requiredLevel)
+        if (!weapon.isUnlocked && levelManager._playerLevel >= weapon.requiredLevel)
         {
             weapon.isUnlocked = true;
             PlayerPrefs.SetInt(WeaponUnlockedKeyPrefix + weapon.weaponID, 1);
             PlayerPrefs.Save();
-            Debug.Log($"{weapon.weaponName} unlocked at level {LevelManager.Instance._playerLevel}!");
+            Debug.Log($"{weapon.weaponName} unlocked at level {levelManager._playerLevel}!");
         }
     }
 

@@ -39,7 +39,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14431,6 +14430,10 @@ MonoBehaviour:
   bgMusic: {fileID: 1752504967}
   timerLevelNot: 1
   notSpawn: 1
+  levelManager: {fileID: 0}
+  ExpTotalGained: {fileID: 0}
+  ExpXKills: {fileID: 0}
+  TotalExpGain: 0
 --- !u!82 &758763957
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19962,6 +19965,79 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 627245595}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1104389312
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7e1f54992d82a3b409668429ae9a0620,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7e1f54992d82a3b409668429ae9a0620,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7e1f54992d82a3b409668429ae9a0620,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7e1f54992d82a3b409668429ae9a0620,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7e1f54992d82a3b409668429ae9a0620,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7e1f54992d82a3b409668429ae9a0620,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7e1f54992d82a3b409668429ae9a0620,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7e1f54992d82a3b409668429ae9a0620,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7e1f54992d82a3b409668429ae9a0620,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7e1f54992d82a3b409668429ae9a0620,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2609345561549811183, guid: 7e1f54992d82a3b409668429ae9a0620,
+        type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7e1f54992d82a3b409668429ae9a0620,
+        type: 3}
+      propertyPath: m_Name
+      value: DarkLordAnd6Kings
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7e1f54992d82a3b409668429ae9a0620, type: 3}
 --- !u!1 &1105253920 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4842258890396859250, guid: d7e91125fdb8f5142a574c2306010309,
@@ -20616,6 +20692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainScreen: {fileID: 1629225280}
   optionsCanvas: {fileID: 1629225280}
+  BattlePassCanvas: {fileID: 0}
   volumeSlider: {fileID: 0}
   senstivitySlider: {fileID: 0}
   player: {fileID: 2751027687028182113}
@@ -36733,6 +36810,11 @@ MonoBehaviour:
   Sender: {fileID: 8475250868403975773}
   slider: {fileID: 800812924}
   boss: 1
+  FireEnemy: 0
+  projectilePrefab: {fileID: 0}
+  safeDistance: 5
+  shootTime: 2
+  shootPoint: {fileID: 0}
 --- !u!65 &881618667794440438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38174,3 +38256,4 @@ SceneRoots:
   - {fileID: 11259703}
   - {fileID: 1143175240}
   - {fileID: 1746010892}
+  - {fileID: 1104389312}

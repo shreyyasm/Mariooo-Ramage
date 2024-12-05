@@ -596,7 +596,14 @@ namespace InfimaGames.LowPolyShooterPack
 					}
 					//Fire Empty.
 					else
-						FireEmpty();
+					{
+                        // FireEmpty();
+                        PlayReloadAnimation();
+                        gunhand1.SetBool("Down", true);
+                        gunhand2.SetBool("Down", true);
+                        StartCoroutine(HandsBack());
+                    }
+						
 					break;
 				//Canceled.
 				case {phase: InputActionPhase.Canceled}:

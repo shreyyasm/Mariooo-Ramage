@@ -27,6 +27,7 @@ namespace InfimaGames.LowPolyShooterPack
 
         #region METHODS
         public WeaponSelectionManager weaponSelectionManager;
+        public bool Tutorial;
         public override void Init(int equippedAtStart = 0)
         {
             
@@ -37,17 +38,25 @@ namespace InfimaGames.LowPolyShooterPack
             foreach (WeaponBehaviour weapon in weapons)
                 weapon.gameObject.SetActive(false);
             
-            if(weaponSelectionManager.currentSelectedWeaponIndex == 0)
+            if(Tutorial)
             {
-                //LeanTween.delayedCall(0.5f, () => {  character.RefreshWeaponSetup(); character.RefreshWeaponSetup(); });
                 Equip(equippedAtStart);
-                weapons[0].gameObject.SetActive(true);
-                character.RefreshWeaponSetup();
             }
             else
             {
-                LeanTween.delayedCall(0.5f, () => { Equip(weaponSelectionManager.currentSelectedWeaponIndex); weapons[weaponSelectionManager.currentSelectedWeaponIndex].gameObject.SetActive(true); character.RefreshWeaponSetup(); });
+                if (weaponSelectionManager.currentSelectedWeaponIndex == 0)
+                {
+                    //LeanTween.delayedCall(0.5f, () => {  character.RefreshWeaponSetup(); character.RefreshWeaponSetup(); });
+                    Equip(equippedAtStart);
+                    weapons[0].gameObject.SetActive(true);
+                    character.RefreshWeaponSetup();
+                }
+                else
+                {
+                    LeanTween.delayedCall(0.5f, () => { Equip(weaponSelectionManager.currentSelectedWeaponIndex); weapons[weaponSelectionManager.currentSelectedWeaponIndex].gameObject.SetActive(true); character.RefreshWeaponSetup(); });
+                }
             }
+            
             //Equip.
            
            

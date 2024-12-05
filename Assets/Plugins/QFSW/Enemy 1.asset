@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy 1
   m_EditorClassIdentifier: 
   _name: Enemy 1
-  _template: {fileID: 8019077444708902885, guid: e261e7a0c185ca646affbf45e4b483e3,
+  _template: {fileID: 1682834986994945087, guid: d49a073f80f11c2469a64ad52d5ace0f,
     type: 3}
   _defaultSize: 30
   _maxSize: 100

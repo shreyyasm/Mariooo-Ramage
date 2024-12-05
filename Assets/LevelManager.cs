@@ -59,7 +59,7 @@ public class LevelManager : MonoBehaviour
                 }
 
                 weaponSelectionManager.UpdateUI();
-                StartCoroutine(UpdateXPBar(totalXP)); // Smoothly update the slider
+               
             }
             else
             {
@@ -87,38 +87,29 @@ public class LevelManager : MonoBehaviour
 
   
 
-    IEnumerator UpdateXPBar(float targetXP)
-    {
-        float currentXP = xpSlider.value;
 
-        // Smoothly update the slider value
-        while (Mathf.Abs(currentXP - targetXP) > 0.01f)
-        {
-            currentXP = Mathf.Lerp(currentXP, targetXP, Time.deltaTime * 10);
-            xpSlider.value = currentXP;
-            yield return null;
-        }
-
-        xpSlider.value = targetXP; // Ensure the final value is accurate
-    }
     public TextMeshProUGUI NewlevelReached;
     public Animator Textanim;
    
     
     private void HandleLevelChange(int newLevel)
     {
-        Debug.Log($"Player level changed to: {newLevel}");
-        NewlevelReached.enabled = true;
-        NewlevelReached.text = "Leveled Up: " + newLevel;
-        Textanim.SetBool("Play", true);
+        if(NewlevelReached != null)
+        {
+            Debug.Log($"Player level changed to: {newLevel}");
+            NewlevelReached.enabled = true;
+            NewlevelReached.text = "Leveled Up: " + newLevel;
+            Textanim.SetBool("Play", true);
+
+            LeanTween.delayedCall(5f, () => { NewlevelReached.enabled = false; Textanim.SetBool("Play", false); });
+            GetPlayerDetails();
+            WeaponCheck();
+            weaponSelectionManager.CheckWeaponUnlocksAndSelectsNew();
+
+
+            UpdateUI();
+        }
         
-        LeanTween.delayedCall(5f, () => { NewlevelReached.enabled = false; Textanim.SetBool("Play", false); });
-        GetPlayerDetails();
-        WeaponCheck();
-        weaponSelectionManager.CheckWeaponUnlocksAndSelectsNew();
-
-
-        UpdateUI();
     }
 
     

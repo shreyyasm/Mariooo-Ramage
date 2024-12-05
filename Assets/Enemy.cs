@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
@@ -69,6 +70,7 @@ public class Enemy : MonoBehaviour
        
         if(agent.enabled)
             agent.SetDestination(player.transform.position);
+        HandleShooting();
         //MoveTowardsPlayer();
     }
     public GameObject explosionPrefab;
@@ -110,12 +112,13 @@ public class Enemy : MonoBehaviour
                     LevelCompletion.Instance.GamlaCheck();
                     killed = true;
                 }
-                    
-                KillStreak.Instance.KilledEnemy();
-                if (!normalDestroy)
-                    enemyHead.ReleaseThisEnemy();
-                else
-                    Destroy(mainBody);
+
+                    KillStreak.Instance.KilledEnemy();
+                    if (!normalDestroy)
+                        enemyHead.ReleaseThisEnemy();
+                    else
+                        Destroy(mainBody);
+
 
 
             }
@@ -143,16 +146,20 @@ public class Enemy : MonoBehaviour
                 explosion.transform.position = transform.position;
                 coinsPool.GetObject().transform.position = transform.position;
                 //Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                
 
                 AudioSource.PlayClipAtPoint(destroySFX, transform.position, 1f);
                 AudioSource.PlayClipAtPoint(killSound, Camera.main.transform.position, 1f);
                 //Instantiate(coin, transform.position, Quaternion.identity);
 
-                KillStreak.Instance.KilledEnemy();
-                if (!normalDestroy)
-                    enemyHead.ReleaseThisEnemy();
-                else
-                    Destroy(mainBody);
+      
+                    KillStreak.Instance.KilledEnemy();
+                    if (!normalDestroy)
+                        enemyHead.ReleaseThisEnemy();
+                    else
+                        Destroy(mainBody);
+                
+                    
             }
             
         }
@@ -184,7 +191,34 @@ public class Enemy : MonoBehaviour
         CameraShake.Instance.shakeDuration += 0.3f;
     }
 
-    public Slider slider;
+    public UnityEngine.UI.Slider slider;
     public bool boss;
-   
+
+
+    public bool FireEnemy;
+    public GameObject projectilePrefab; // The projectile to instantiate
+
+    [Header("Settings")]
+    public float safeDistance = 5f; // Distance to maintain from the player
+    public float shootTime = 2f; // Time between each shot
+    public Transform shootPoint; // Point from which the projectile is instantiated
+    private float shootTimer; // Timer to keep track of shooting intervals
+    private void HandleShooting()
+    {
+        shootTimer += Time.deltaTime;
+        if (shootTimer >= shootTime)
+        {
+            shootTimer = 0f;
+
+            if (projectilePrefab && shootPoint)
+            {
+                // Instantiate the projectile and give it a direction
+                GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
+                Rigidbody rb = projectile.GetComponent<Rigidbody>();
+               
+                
+                
+            }
+        }
+    }
 }
