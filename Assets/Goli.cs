@@ -18,7 +18,7 @@ public class Goli : MonoBehaviour
             Vector3 directionAway = (transform.position - flame.position).normalized;
 
             // Move the GameObject away from the flame
-            transform.position += directionAway * projSpeed * Time.deltaTime;
+            transform.position += flame.forward * projSpeed * Time.deltaTime;
         }
         else
         {

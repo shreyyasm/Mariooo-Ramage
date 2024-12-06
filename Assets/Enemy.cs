@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
 
     public GameObject heightHaReBaba;
     public float playerDamage = 10f;
+    public bool Tutorial;
     private void OnEnable()
     {
          health = maxHealth;
@@ -112,12 +113,20 @@ public class Enemy : MonoBehaviour
                     LevelCompletion.Instance.GamlaCheck();
                     killed = true;
                 }
-
+                if(Tutorial)
+                {
+                    mainBody.SetActive(true);
+                }
+                else
+                {
                     KillStreak.Instance.KilledEnemy();
                     if (!normalDestroy)
                         enemyHead.ReleaseThisEnemy();
                     else
                         Destroy(mainBody);
+                }
+
+                    
 
 
 
@@ -152,14 +161,19 @@ public class Enemy : MonoBehaviour
                 AudioSource.PlayClipAtPoint(killSound, Camera.main.transform.position, 1f);
                 //Instantiate(coin, transform.position, Quaternion.identity);
 
-      
+                if (Tutorial)
+                {
+                    mainBody.SetActive(true);
+                }
+                else
+                {
                     KillStreak.Instance.KilledEnemy();
                     if (!normalDestroy)
                         enemyHead.ReleaseThisEnemy();
                     else
                         Destroy(mainBody);
-                
-                    
+                }
+
             }
             
         }
@@ -196,13 +210,13 @@ public class Enemy : MonoBehaviour
 
 
     public bool FireEnemy;
-    public GameObject projectilePrefab; // The projectile to instantiate
 
     [Header("Settings")]
     public float safeDistance = 5f; // Distance to maintain from the player
     public float shootTime = 2f; // Time between each shot
     public Transform shootPoint; // Point from which the projectile is instantiated
     private float shootTimer; // Timer to keep track of shooting intervals
+    public ObjectPool enemies;
     private void HandleShooting()
     {
         shootTimer += Time.deltaTime;
@@ -210,14 +224,16 @@ public class Enemy : MonoBehaviour
         {
             shootTimer = 0f;
 
-            if (projectilePrefab && shootPoint)
+            if (shootPoint)
             {
                 // Instantiate the projectile and give it a direction
-                GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
-                Rigidbody rb = projectile.GetComponent<Rigidbody>();
                
-                
-                
+                GameObject enemy = enemies.GetObject(); 
+                enemy.transform.position = shootPoint.position;
+                enemy.transform.rotation = Quaternion.LookRotation(transform.right);
+                enemy.GetComponent<Goli>().flame = transform;
+
+
             }
         }
     }
