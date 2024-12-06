@@ -24700,7 +24700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPool: {fileID: 11400000, guid: 9cc768f0a37295a4090a297ed154b240, type: 2}
-  timer: 5
+  timer: 10
 --- !u!114 &540304831181323961
 MonoBehaviour:
   m_ObjectHideFlags: 0

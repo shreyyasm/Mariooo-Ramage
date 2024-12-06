@@ -30,8 +30,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 3.unity
     guid: af4b38d3003833f4a9e25dc712d6d82b
   - enabled: 1
+    path: Assets/Scenes/Boss Loading.unity
+    guid: d737a06999bc4564699a6a57e4466fd4
+  - enabled: 1
     path: Assets/Scenes/Boss.unity
     guid: 600581a0e4fa3254e8693158abfcc987
+  - enabled: 1
+    path: Assets/Scenes/End Scene.unity
+    guid: 2a26dae30a0af8e45ac9ba6e8c1672e5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9eb07e2d669e9c94e9d7d3c782a916f7,
       type: 2}

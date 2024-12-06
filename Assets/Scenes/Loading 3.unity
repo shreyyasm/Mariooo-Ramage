@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -708,7 +707,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -263.70874, y: 342.65198}
+  m_AnchoredPosition: {x: -309, y: 346}
   m_SizeDelta: {x: 499.4242, y: 118.4398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &708415637
@@ -766,7 +765,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 4
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -843,8 +842,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.4622, y: 110.022}
-  m_SizeDelta: {x: 494.9665, y: 260.2345}
+  m_AnchoredPosition: {x: -9.065703, y: 110.022}
+  m_SizeDelta: {x: 481.24, y: 260.2345}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &735072444
 MonoBehaviour:
@@ -866,7 +865,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kill The Boss.
+  m_text: Reach The final gate by killing enemies and parkouring the level.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ce5b49a3fcb1d16428f86b8dd81636a0, type: 2}
   m_sharedMaterial: {fileID: -2584945918503757450, guid: ce5b49a3fcb1d16428f86b8dd81636a0,
@@ -894,14 +893,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1051,7 +1050,7 @@ MonoBehaviour:
   slider: {fileID: 1933778962}
   load: 0
   SpaceText: {fileID: 2071330782}
-  nextLevelIndex: 6
+  nextLevelIndex: 7
 --- !u!4 &1029282085
 Transform:
   m_ObjectHideFlags: 0
@@ -1124,7 +1123,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: level - 2
+  m_text: 'level - 3
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ce5b49a3fcb1d16428f86b8dd81636a0, type: 2}
   m_sharedMaterial: {fileID: -2584945918503757450, guid: ce5b49a3fcb1d16428f86b8dd81636a0,
@@ -1365,7 +1366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
+  m_Color: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1440,7 +1441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4528302, g: 0.17197631, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.08608723, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1896,7 +1897,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1e7ec6eb8444823428da7d6e8081de5d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 18e9ab46c2809834fb09a16f5c86109d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -99,8 +99,8 @@ public class RaceCountdown : MonoBehaviour
     public void GameOver()
     {
         ExpXKills.text = KillStreak.Instance.TotalKills + " Kills X 15 Xp";
-        ExpTotalGained.text = KillStreak.Instance.TotalKills * 15 + " Xp";
-        TotalExpGain = KillStreak.Instance.TotalKills * 15;
+        ExpTotalGained.text = KillStreak.Instance.TotalKills * 50 + " Xp";
+        TotalExpGain = KillStreak.Instance.TotalKills * 50;
        
 
         //levelManager.AddExperienceAfterGame(TotalExpGain);

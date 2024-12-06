@@ -115,7 +115,7 @@ public class Enemy : MonoBehaviour
                 }
                 if(Tutorial)
                 {
-                    mainBody.SetActive(true);
+                    mainBody.SetActive(false);
                 }
                 else
                 {
@@ -163,7 +163,7 @@ public class Enemy : MonoBehaviour
 
                 if (Tutorial)
                 {
-                    mainBody.SetActive(true);
+                    mainBody.SetActive(false);
                 }
                 else
                 {
@@ -223,8 +223,8 @@ public class Enemy : MonoBehaviour
         if (shootTimer >= shootTime)
         {
             shootTimer = 0f;
-
-            if (shootPoint)
+            float distance = Vector2.Distance(transform.position,player.transform.position);
+            if (shootPoint && distance < 40)
             {
                 // Instantiate the projectile and give it a direction
                

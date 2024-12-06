@@ -85,7 +85,7 @@ public class Settings : MonoBehaviour
     public void PlayButton()
     {
         // 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
        
     }
     public void OpenBattleButton()

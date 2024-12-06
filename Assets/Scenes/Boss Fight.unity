@@ -15505,7 +15505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69850494400b5b444aeb9a5508e8bf38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNextIndex: 6
+  SceneNextIndex: 10
 --- !u!135 &750509159
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -21394,7 +21394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 5
-  numObjects: 5
+  numObjects: 3
   instantiationInterval: 30
   enemies: {fileID: 11400000, guid: de47db3d036f0df4fa028fc73f235232, type: 2}
   prefabToInstantiate: {fileID: 0}
@@ -21473,7 +21473,7 @@ Transform:
   m_GameObject: {fileID: 1003542641}
   serializedVersion: 2
   m_LocalRotation: {x: -0.01664471, y: -0.18245812, z: -0.0030892703, w: 0.9830679}
-  m_LocalPosition: {x: 3.699293, y: -2.03, z: 2.2457051}
+  m_LocalPosition: {x: 47.22, y: 0.96, z: -2.51}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -27310,7 +27310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -301.78714, y: 33.6}
+  m_AnchoredPosition: {x: -294, y: 34}
   m_SizeDelta: {x: 344.3657, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1343822724
@@ -27333,7 +27333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bowser the gay
+  m_text: Mowser
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ce5b49a3fcb1d16428f86b8dd81636a0, type: 2}
   m_sharedMaterial: {fileID: -2584945918503757450, guid: ce5b49a3fcb1d16428f86b8dd81636a0,
@@ -27368,7 +27368,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -30150,7 +30150,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480736977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30163,7 +30163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.9846e-10, y: 470.55872}
+  m_AnchoredPosition: {x: 0, y: 436}
   m_SizeDelta: {x: 935.0288, y: 38.4617}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1480736979
@@ -32812,8 +32812,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627187212}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 22.78, y: -3.02, z: -3.55}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -20.42, y: -0.17, z: -3.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32823,7 +32823,7 @@ Transform:
   - {fileID: 40504349}
   - {fileID: 2014800470}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1627187214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40497,7 +40497,6 @@ MonoBehaviour:
   slider: {fileID: 1480736979}
   boss: 1
   FireEnemy: 0
-  projectilePrefab: {fileID: 0}
   safeDistance: 5
   shootTime: 2
   shootPoint: {fileID: 0}

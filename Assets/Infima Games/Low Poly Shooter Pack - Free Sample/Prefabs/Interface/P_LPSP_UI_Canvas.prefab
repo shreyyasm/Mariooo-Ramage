@@ -570,7 +570,6 @@ MonoBehaviour:
   m_text: 'Controls
 
 
-
     Movement:
 
     - Mouse to look around.
@@ -580,21 +579,18 @@ MonoBehaviour:
 
     - Left shift (hold) to run.
 
+    - Space to Jump.
+
 
     Weapon:
 
-    - Left click to
-    shoot.
+    -
+    Left click to shoot.
 
     - R key to reload.
 
-    - T key to inspect weapon.
-
-    - H key to
-    holster, and H again to take out weapon.
-
-    - Q/scrollwheel key to cycle equipped
-    weapons.'
+    - Q/scrollwheel key to cycle
+    equipped weapons.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9dbdfc0b2d5cce142abc1d18503fc6e3, type: 2}
   m_sharedMaterial: {fileID: -2584945918503757450, guid: 9dbdfc0b2d5cce142abc1d18503fc6e3,

@@ -86,7 +86,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 12
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -213,6 +213,7 @@ MonoBehaviour:
   agent: {fileID: 2579336540872053332}
   heightHaReBaba: {fileID: 0}
   playerDamage: 10
+  Tutorial: 0
   heightLe: 0
   explosionPrefab: {fileID: 180128, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
   moveSpeed: 5
@@ -228,6 +229,11 @@ MonoBehaviour:
   Sender: {fileID: 6713499752854672511}
   slider: {fileID: 0}
   boss: 0
+  FireEnemy: 0
+  safeDistance: 5
+  shootTime: 2
+  shootPoint: {fileID: 0}
+  enemies: {fileID: 0}
 --- !u!65 &4488913167648396895
 BoxCollider:
   m_ObjectHideFlags: 0
