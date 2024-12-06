@@ -134,15 +134,15 @@ public class Settings : MonoBehaviour
 
         PlayerPrefs.SetFloat("Senstivity", senstivitySlider.value);
         
-        player.sensitivity = PlayerPrefs.GetFloat("Senstivity");
+        if(player != null)
+            player.sensitivity = PlayerPrefs.GetFloat("Senstivity");
 
     }  
    
     public void MainMenu(int index)
     {
        
-        SceneManager.UnloadSceneAsync(index);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(index);
     }
     public void Retry(int index)
     {

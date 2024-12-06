@@ -50,7 +50,8 @@ public class LevelCompletion : MonoBehaviour
     public void Win()
     {
         KillStreak.Instance.CompletedLevel();
-        SceneManager.LoadScene(11);
+        LeanTween.delayedCall(5f, () => { SceneManager.LoadScene(11); });
+       
        // StartCoroutine(loadMainMenu());
     }
     public AudioClip clip;

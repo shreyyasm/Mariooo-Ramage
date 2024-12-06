@@ -21,29 +21,29 @@ public class CameraShake : MonoBehaviour
 	{
 		if (Instance == null)
 			Instance = this;
-		if (camTransform == null)
-		{
-			camTransform = GetComponent(typeof(Transform)) as Transform;
-		}
+		//if (camTransform == null)
+		//{
+		//	camTransform = GetComponent(typeof(Transform)) as Transform;
+		//}
 	}
 	
 	void OnEnable()
 	{
-		originalPos = camTransform.localPosition;
+		//originalPos = camTransform.localPosition;
 	}
 
 	void Update()
 	{
-		if (shakeDuration > 0)
-		{
-			camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
+		//if (shakeDuration > 0)
+		//{
+		//	camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
 			
-			shakeDuration -= Time.deltaTime * decreaseFactor;
-		}
-		else
-		{
-			shakeDuration = 0f;
-			camTransform.localPosition = originalPos;
-		}
+		//	shakeDuration -= Time.deltaTime * decreaseFactor;
+		//}
+		//else
+		//{
+		//	shakeDuration = 0f;
+		//	camTransform.localPosition = originalPos;
+		//}
 	}
 }

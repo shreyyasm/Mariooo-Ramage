@@ -6325,7 +6325,7 @@ MonoBehaviour:
     fireRate: 24
     magazineSize: 54
   - weaponPrefab: {fileID: 1201169193}
-    weaponName: Alla Hu Akbar
+    weaponName: Destroyer-100
     requiredLevel: 10
     weaponID: 4
     isUnlocked: 0

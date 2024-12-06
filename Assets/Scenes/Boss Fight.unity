@@ -10637,7 +10637,7 @@ PrefabInstance:
     - target: {fileID: 4734682517923185045, guid: 63d7c69aa20338a47bb86bb24bbb8107,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4734682517923185045, guid: 63d7c69aa20338a47bb86bb24bbb8107,
         type: 3}
@@ -13666,7 +13666,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639468415}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1e19ee8f44b25944bb932d1ca54c8e2, type: 3}
   m_Name: 
@@ -25462,27 +25462,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22400002, guid: 9a8c4938f4468294ea58e3f22fefaec9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22400002, guid: 9a8c4938f4468294ea58e3f22fefaec9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22400002, guid: 9a8c4938f4468294ea58e3f22fefaec9, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22400002, guid: 9a8c4938f4468294ea58e3f22fefaec9, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22400002, guid: 9a8c4938f4468294ea58e3f22fefaec9, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1920
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22400002, guid: 9a8c4938f4468294ea58e3f22fefaec9, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1080
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22400002, guid: 9a8c4938f4468294ea58e3f22fefaec9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25514,11 +25514,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22400002, guid: 9a8c4938f4468294ea58e3f22fefaec9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000022888
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22400002, guid: 9a8c4938f4468294ea58e3f22fefaec9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00022125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22400002, guid: 9a8c4938f4468294ea58e3f22fefaec9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -30914,7 +30914,7 @@ PrefabInstance:
     - target: {fileID: 4734682517923185045, guid: 63d7c69aa20338a47bb86bb24bbb8107,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4734682517923185045, guid: 63d7c69aa20338a47bb86bb24bbb8107,
         type: 3}
@@ -40487,7 +40487,7 @@ MonoBehaviour:
   coinsPool: {fileID: 11400000, guid: 4ae5e879b1a89824f8daf0642fb51009, type: 2}
   agent: {fileID: 1003542646}
   heightHaReBaba: {fileID: 0}
-  playerDamage: 50
+  playerDamage: 30
   Tutorial: 0
   heightLe: 1
   explosionPrefab: {fileID: 180128, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
@@ -43135,7 +43135,7 @@ MonoBehaviour:
     fireRate: 0
     magazineSize: 0
   - weaponPrefab: {fileID: 314906876}
-    weaponName: Alla Hu Akbar
+    weaponName: Destroyer-100
     requiredLevel: 10
     weaponID: 4
     isUnlocked: 0
