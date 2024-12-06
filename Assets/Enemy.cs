@@ -202,7 +202,7 @@ public class Enemy : MonoBehaviour
         info.Sender = Sender;
         Sender.SetIndicator();
         bl_DamageDelegate.OnDamageEvent(info);
-        CameraShake.Instance.shakeDuration += 0.3f;
+        //CameraShake.Instance.shakeDuration += 0.3f;
     }
 
     public UnityEngine.UI.Slider slider;

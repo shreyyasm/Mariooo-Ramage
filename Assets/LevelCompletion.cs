@@ -31,7 +31,7 @@ public class LevelCompletion : MonoBehaviour
     {
         numberOfCoins++;
        // gamlaText.text = numberOfFools + " X 4";
-        if (numberOfCoins == 50 && !isMoving && !levelTwo)
+        if (numberOfCoins == 25 && !isMoving && !levelTwo)
         {
             KillStreak.Instance.CompletedLevel();
             StartCoroutine(MoveGate());

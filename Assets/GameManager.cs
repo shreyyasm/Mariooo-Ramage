@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     public void LoadLevel()
     {
         int CurrentScence = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.UnloadSceneAsync(CurrentScence);
         SceneManager.LoadScene(SceneNextIndex);
     }
     private void OnTriggerEnter(Collider other)

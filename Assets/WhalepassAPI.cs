@@ -46,10 +46,11 @@ public class WhalePassAPI : MonoBehaviour
         {
             playerId = GeneratePlayerId();
             SavePlayerId(playerId);
+           
         }
 
         EnrollPlayer();
-        AddExp(0);
+        
         CheckPlayer_Inventory();
         GettingBattlePass();
         PlayerBaseResponse();
@@ -64,14 +65,7 @@ public class WhalePassAPI : MonoBehaviour
     private void Update()
     {
        
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            AddExp(400);
-            PlayerBaseResponse();
-            LevelManager.Instance.UpdateUI();
-            WeaponSelectionManager.instance.CheckWeaponUnlocks();
-        }
-            
+        
     }
     private string GeneratePlayerId()
     {
@@ -102,31 +96,29 @@ public class WhalePassAPI : MonoBehaviour
     {
         WhalepassSdkManager.enroll(playerId, response =>
         {
-            Debug.Log(response.succeed);
+            //Debug.Log(response.succeed);
         });
     }
     public void AddExp(int exp)
     {
         WhalepassSdkManager.updateExp(playerId, exp, response =>
         {
-            Debug.Log(response.succeed);
-            Debug.Log(response.responseBody);
+            //Debug.Log(response.succeed);
+            //Debug.Log(response.responseBody);
         });
     }
     public void CheckPlayer_Inventory()
     {
         WhalepassSdkManager.getPlayerInventory(playerId, response =>
         {
-            Debug.Log(response.succeed);
-            Debug.Log(response.responseBody);
+           
         });
     }
     public void RedirectPlayer_Rewards()
     {
         WhalepassSdkManager.getPlayerRedirectionLink(playerId, response =>
         {
-            Debug.Log(response.succeed);
-            Debug.Log(response.responseBody);
+            
             Application.OpenURL(response.link.redirectionLink);
         });
     }
@@ -134,8 +126,7 @@ public class WhalePassAPI : MonoBehaviour
     {
         WhalepassSdkManager.getBattlepass(BattlePassId, false, false, response =>
         {
-            Debug.Log(response.succeed);
-            Debug.Log(response.responseBody);
+           
         });
     }
  
@@ -144,9 +135,6 @@ public class WhalePassAPI : MonoBehaviour
         WhalepassSdkManager.getPlayerBaseProgress(playerId, response =>
         {
             
-            Debug.Log(response.succeed);
-            Debug.Log(response.responseBody);
-            Debug.Log(response.result.expRequiredForNextLevel);
             NextLevelExp = (int)response.result.expRequiredForNextLevel;
             CurrentTotalExp = (int)response.result.currentExp;
             CurrentLevel = (int)response.result.lastCompletedLevel;

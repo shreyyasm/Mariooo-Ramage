@@ -35,7 +35,8 @@ public class Settings : MonoBehaviour
 
 
             }
-            player.sensitivity = 50f;
+            if(player != null)
+                player.sensitivity = 50f;
 
         }
 

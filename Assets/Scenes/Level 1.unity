@@ -3639,7 +3639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 11.700012, y: 1.9678}
+  m_AnchoredPosition: {x: 2.44, y: 1.9678001}
   m_SizeDelta: {x: 64.7394, y: 11.281}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175232970
@@ -10745,7 +10745,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 175232969}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 25
   m_WholeNumbers: 0
   m_Value: 0.472
   m_OnValueChanged:
@@ -14598,6 +14598,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500002, guid: 9a8c4938f4468294ea58e3f22fefaec9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 11400018, guid: 9a8c4938f4468294ea58e3f22fefaec9, type: 3}
       propertyPath: IndicatorUI
       value: 
@@ -16877,7 +16881,7 @@ MonoBehaviour:
   audioSource: {fileID: 1387286281}
   KillText: {fileID: 737127649}
   CoinsToCollets: 0
-  TotalCoins: 35
+  TotalCoins: 25
   slider: {fileID: 869180974}
   levelCompletedText: {fileID: 1801887132}
   levelCompleteSFX: {fileID: 8300000, guid: 662595d3ba74765428514b337e13e072, type: 3}
@@ -21206,9 +21210,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c917dd449e72e4d4cac0e33b02f0f7f1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0b059cf1ff31d054a8ef1d88dc21c075, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.721
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -24486,7 +24490,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3c3b86ca5dd26394e84d3b3701796cb3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0b059cf1ff31d054a8ef1d88dc21c075, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.721
   m_Pitch: 1
@@ -26674,19 +26678,7 @@ MonoBehaviour:
     m_ActionId: ba2b842b-3f5c-4fb3-83eb-219eb3515445
     m_ActionName: Player/Look[/XInputControllerWindows/rightStick,/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4113952420162717860}
-        m_TargetAssemblyTypeName: InfimaGames.LowPolyShooterPack.Character, Assembly-CSharp
-        m_MethodName: OnTryHolster
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 4989ad3b-04e9-4d5d-8aeb-d8f00ab4550b
     m_ActionName: Player/Holster[/Keyboard/h,/XInputControllerWindows/rightShoulder]
   - m_PersistentCalls:
@@ -26738,19 +26730,7 @@ MonoBehaviour:
     m_ActionId: 98c0547a-0a5e-484e-ba12-a7812face9b0
     m_ActionName: Player/Inventory Next[/Keyboard/q,/XInputControllerWindows/buttonNorth]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4113952420162717860}
-        m_TargetAssemblyTypeName: InfimaGames.LowPolyShooterPack.Character, Assembly-CSharp
-        m_MethodName: OnTryInspect
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: f2d17bd7-8d54-496b-99fd-8cb954650514
     m_ActionName: Player/Inspect[/Keyboard/t,/XInputControllerWindows/dpad/left]
   - m_PersistentCalls:
@@ -28957,8 +28937,6 @@ MonoBehaviour:
   characterAnimator: {fileID: 2750756724552452943}
   holdingButtonRun: 0
   cameraShake: {fileID: 2159460449521917206}
-  gunhand1: {fileID: 9075549173343227875}
-  gunhand2: {fileID: 9075549173343227875}
 --- !u!1 &4118684211010843665
 GameObject:
   m_ObjectHideFlags: 0

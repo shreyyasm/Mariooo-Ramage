@@ -599,8 +599,8 @@ namespace InfimaGames.LowPolyShooterPack
 					{
                         // FireEmpty();
                         PlayReloadAnimation();
-                        gunhand1.SetBool("Down", true);
-                        gunhand2.SetBool("Down", true);
+                        //gunhand1.SetBool("Down", true);
+                        //gunhand2.SetBool("Down", true);
                         StartCoroutine(HandsBack());
                     }
 						
@@ -615,8 +615,7 @@ namespace InfimaGames.LowPolyShooterPack
 		/// <summary>
 		/// Reload.
 		/// </summary>
-		public Animator gunhand1;
-		public Animator gunhand2;
+		
 
 		public void OnTryPlayReload(InputAction.CallbackContext context)
 		{
@@ -635,8 +634,8 @@ namespace InfimaGames.LowPolyShooterPack
 				case {phase: InputActionPhase.Performed}:
 					//Play Animation.
 					PlayReloadAnimation();
-					gunhand1.SetBool("Down", true);
-					gunhand2.SetBool("Down", true);
+					//gunhand1.SetBool("Down", true);
+					//gunhand2.SetBool("Down", true);
 					StartCoroutine(HandsBack());
 					break;
 			}
@@ -644,8 +643,8 @@ namespace InfimaGames.LowPolyShooterPack
 		IEnumerator HandsBack()
         {
 			yield return new WaitForSeconds(1.5f);
-			gunhand1.SetBool("Down", false);
-			gunhand2.SetBool("Down", false);
+			//gunhand1.SetBool("Down", false);
+			//gunhand2.SetBool("Down", false);
 
 		}
 		/// <summary>

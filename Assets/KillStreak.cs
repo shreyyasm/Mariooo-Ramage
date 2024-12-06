@@ -27,7 +27,7 @@ public class KillStreak : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider.maxValue = 50f;
+        slider.maxValue = 25f;
     }
 
     // Update is called once per frame
@@ -52,7 +52,7 @@ public class KillStreak : MonoBehaviour
         startTimer = true;
         resetTimer = 5f;
         KillStreakSound(KillStreakNum);
-        WhalePassAPI.instance.AddExp(50);
+        WhalePassAPI.instance.AddExp(200);
         WhalePassAPI.instance.PlayerBaseResponse();
         LevelManager.Instance.UpdateUI();
     }

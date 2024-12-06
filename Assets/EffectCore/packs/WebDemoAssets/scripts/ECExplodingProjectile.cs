@@ -88,7 +88,7 @@ public class ECExplodingProjectile : MonoBehaviour
             transform.position = hit.point;
             Quaternion rot = Quaternion.FromToRotation(Vector3.forward, hit.normal);
             Vector3 pos = hit.point;
-            Instantiate(impactPrefab, pos, rot);
+            //Instantiate(impactPrefab, pos, rot);
             if (!explodeOnTimer && Missile == false)
             {
                 Destroy(gameObject);
@@ -115,7 +115,7 @@ public class ECExplodingProjectile : MonoBehaviour
                 rot = Quaternion.Euler(0, 0, 0);
             }
             Vector3 pos = contact.point;
-            Instantiate(impactPrefab, pos, rot);
+            //Instantiate(impactPrefab, pos, rot);
             if (!explodeOnTimer && Missile == false)
             {
                 //Destroy(gameObject);
@@ -135,7 +135,7 @@ public class ECExplodingProjectile : MonoBehaviour
 
     void Explode()
     {
-        Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.Euler(0, 0, 0));
+        //Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.Euler(0, 0, 0));
         Destroy(gameObject);
     }
 

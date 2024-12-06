@@ -116,7 +116,6 @@ public class RaceCountdown : MonoBehaviour
     {
         yield return new WaitForSeconds(8f);
         int currentScene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.UnloadSceneAsync(currentScene);
         SceneManager.LoadScene(currentScene - 1);
     }
 }

@@ -53,7 +53,10 @@ namespace InfimaGames.LowPolyShooterPack
                 }
                 else
                 {
-                    LeanTween.delayedCall(0.5f, () => { Equip(weaponSelectionManager.currentSelectedWeaponIndex); weapons[weaponSelectionManager.currentSelectedWeaponIndex].gameObject.SetActive(true); character.RefreshWeaponSetup(); });
+                    Equip(equippedAtStart);
+                    //weapons[0].gameObject.SetActive(true);
+                    //character.RefreshWeaponSetup();
+                   // LeanTween.delayedCall(0.5f, () => { Equip(weaponSelectionManager.currentSelectedWeaponIndex); weapons[weaponSelectionManager.currentSelectedWeaponIndex].gameObject.SetActive(true); character.RefreshWeaponSetup(); });
                 }
             }
             

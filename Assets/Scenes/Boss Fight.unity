@@ -27975,17 +27975,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7e1f54992d82a3b409668429ae9a0620,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7e1f54992d82a3b409668429ae9a0620,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7e1f54992d82a3b409668429ae9a0620,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7e1f54992d82a3b409668429ae9a0620,
         type: 3}
@@ -28049,6 +28049,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8549076387856758345, guid: 7e1f54992d82a3b409668429ae9a0620,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8549076387856758345, guid: 7e1f54992d82a3b409668429ae9a0620,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -28061,6 +28066,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -4616791171437756907, guid: 7e1f54992d82a3b409668429ae9a0620,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4616791171437756907, guid: 7e1f54992d82a3b409668429ae9a0620,
         type: 3}
@@ -32112,7 +32122,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581345874}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 82ec895a45a70084b8e27b32f7b3fc3d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -32813,7 +32823,7 @@ Transform:
   m_GameObject: {fileID: 1627187212}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -20.42, y: -0.17, z: -3.55}
+  m_LocalPosition: {x: -20.42, y: 1.54, z: -3.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32843,8 +32853,6 @@ MonoBehaviour:
   characterAnimator: {fileID: 1698533757}
   holdingButtonRun: 0
   cameraShake: {fileID: 639468418}
-  gunhand1: {fileID: 464947365}
-  gunhand2: {fileID: 464947365}
 --- !u!114 &1627187215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36168,7 +36176,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ddda7845cfad9514ab03010a0d6e38e6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d8a7bbc96c44e354d970cbd1517f2bb4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.721
   m_Pitch: 1

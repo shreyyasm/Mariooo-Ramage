@@ -18,5 +18,5 @@ MonoBehaviour:
   _defaultSize: 30
   _maxSize: 100
   _incrementalInstanceNames: 1
-  _autoInitialize: 1
+  _autoInitialize: 0
   _repopulateOnSceneChange: 0

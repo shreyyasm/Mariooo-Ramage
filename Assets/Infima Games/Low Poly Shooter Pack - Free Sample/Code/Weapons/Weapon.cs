@@ -268,9 +268,9 @@ namespace InfimaGames.LowPolyShooterPack
 
         public override void EjectCasing()
         {
-            //Spawn casing prefab at spawn point.
-            if(prefabCasing != null && socketEjection != null)
-                Instantiate(prefabCasing, socketEjection.position, socketEjection.rotation);
+            ////Spawn casing prefab at spawn point.
+            //if(prefabCasing != null && socketEjection != null)
+            //    Instantiate(prefabCasing, socketEjection.position, socketEjection.rotation);
         }
 
         #endregion

@@ -202,7 +202,7 @@ public class bl_HudDamageManager : MonoBehaviour {
             return;
 
         Animator a = HealthInfo.GetComponent<Animator>();
-        a.Play("HealthInfoHit", 0, 0);
+        //a.Play("HealthInfoHit", 0, 0);
     }
 
     /// <summary>
