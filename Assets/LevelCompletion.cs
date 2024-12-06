@@ -50,8 +50,8 @@ public class LevelCompletion : MonoBehaviour
     public void Win()
     {
         KillStreak.Instance.CompletedLevel();
-
-        StartCoroutine(loadMainMenu());
+        SceneManager.LoadScene(11);
+       // StartCoroutine(loadMainMenu());
     }
     public AudioClip clip;
     IEnumerator loadMainMenu()

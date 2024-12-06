@@ -113,18 +113,14 @@ public class Enemy : MonoBehaviour
                     LevelCompletion.Instance.GamlaCheck();
                     killed = true;
                 }
-                if(Tutorial)
-                {
-                    mainBody.SetActive(false);
-                }
-                else
-                {
-                    KillStreak.Instance.KilledEnemy();
+           
+                    if(!Tutorial)
+                        KillStreak.Instance.KilledEnemy();
                     if (!normalDestroy)
                         enemyHead.ReleaseThisEnemy();
                     else
                         Destroy(mainBody);
-                }
+                
 
                     
 
@@ -161,19 +157,15 @@ public class Enemy : MonoBehaviour
                 AudioSource.PlayClipAtPoint(killSound, Camera.main.transform.position, 1f);
                 //Instantiate(coin, transform.position, Quaternion.identity);
 
-                if (Tutorial)
-                {
-                    mainBody.SetActive(false);
-                }
-                else
-                {
-                    KillStreak.Instance.KilledEnemy();
+           
+                    if (!Tutorial)
+                        KillStreak.Instance.KilledEnemy();
+
                     if (!normalDestroy)
                         enemyHead.ReleaseThisEnemy();
                     else
                         Destroy(mainBody);
-                }
-
+                
             }
             
         }

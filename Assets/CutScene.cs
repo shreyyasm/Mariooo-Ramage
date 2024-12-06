@@ -6,12 +6,15 @@ public class CutScene : MonoBehaviour
 {
     public Animator cameraAnim;
     public Animator BlackAnim;
+    public float timer = 24;
+    public float timerEnd = 27;
     // Start is called before the first frame update
     void Start()
     {
         LeanTween.delayedCall(1f, () => { StartCameraAnim(); });
-        LeanTween.delayedCall(24f, () => { BlackIn(); });
-        LeanTween.delayedCall(27f, () => { SceneManager.LoadScene(1); });
+        LeanTween.delayedCall(timer, () => { BlackIn(); });
+        LeanTween.delayedCall(timerEnd, () => { SceneManager.LoadScene(1); });
+
     }
 
     // Update is called once per frame

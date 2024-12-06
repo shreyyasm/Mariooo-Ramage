@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  health: 450
-  maxHealth: 450
+  health: 400
+  maxHealth: 400
   destroySFX: {fileID: 8300000, guid: 53db5a3f0d662b144afda84a68aa8d84, type: 3}
   BulletHitSFX:
   - {fileID: 8300000, guid: 9267005c6928960458fbd35382349802, type: 3}

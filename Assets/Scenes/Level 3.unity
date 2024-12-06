@@ -8429,7 +8429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965555d451af4a2299927c4e3dd7ee09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammunitionTotal: 50
+  ammunitionTotal: 35
   sprite: {fileID: 21300000, guid: 51d720b69910c244aa44a082bddf0155, type: 3}
 --- !u!23 &348449465
 MeshRenderer:
@@ -17000,7 +17000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69850494400b5b444aeb9a5508e8bf38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNextIndex: 8
+  SceneNextIndex: 9
 --- !u!135 &750509159
 SphereCollider:
   m_ObjectHideFlags: 0
