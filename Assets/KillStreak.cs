@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
+using Random = UnityEngine.Random;
+using System.Reflection;
 public class KillStreak : MonoBehaviour
 {
     public static KillStreak Instance;
@@ -45,6 +48,8 @@ public class KillStreak : MonoBehaviour
                 KillText.enabled = false;
         }
     }
+    public int invicibiltyKills= 0;
+    
     public void KilledEnemy()
     {
         TotalKills++;
@@ -55,6 +60,14 @@ public class KillStreak : MonoBehaviour
         WhalePassAPI.instance.AddExp(200);
         WhalePassAPI.instance.PlayerBaseResponse();
         LevelManager.Instance.UpdateUI();
+        Challenges.instance.Challenge_One(KillStreakNum);
+
+        if (playerHealth.playerInvincible)
+        {
+            invicibiltyKills++;
+                 Challenges.instance.Challenge_Three(invicibiltyKills);
+        }
+           
     }
     public void KillStreakSound(int killNo)
     {
@@ -94,6 +107,8 @@ public class KillStreak : MonoBehaviour
         //}
 
     }
+    public PlayerHealth playerHealth;
+    public bool level_Three;
     public void CompletedLevel()
     {
         levelCompletedText.SetActive(true);
@@ -105,6 +120,17 @@ public class KillStreak : MonoBehaviour
             i.Explode();
         }
         StartCoroutine(DisableText());
+        if (!playerHealth.hit)
+            Challenges.instance.Challenge_Two(1);
+
+        if (level_Three)
+        {
+            if (TotalKills == 0)
+                Challenges.instance.Challenge_Four(1);
+        }
+            
+
+
     }
     IEnumerator DisableText()
     {

@@ -129,7 +129,14 @@ public class WhalePassAPI : MonoBehaviour
            
         });
     }
- 
+    public void CompletingChallenge(string challengeID)
+    {
+        WhalepassSdkManager.completeChallenge(playerId, challengeID, response =>
+        {
+            Debug.Log(response.succeed);
+            Debug.Log(response.responseBody);
+        });
+    }
     public void PlayerBaseResponse()
     {
         WhalepassSdkManager.getPlayerBaseProgress(playerId, response =>

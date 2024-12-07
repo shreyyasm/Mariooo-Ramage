@@ -40,6 +40,7 @@ public class Goli : MonoBehaviour
                 {
                     HurtPlayer();
                     collision.gameObject.GetComponent<PlayerHealth>().health -= playerDamage;
+                    collision.gameObject.GetComponent<PlayerHealth>().hit = true;
                     collision.gameObject.GetComponent<PlayerHealth>().GenerateHealth();
                 }
             }

@@ -140,6 +140,7 @@ public class Enemy : MonoBehaviour
         {
             HurtPlayer();
             collision.gameObject.GetComponent<PlayerHealth>().health -= playerDamage;
+            collision.gameObject.GetComponent<PlayerHealth>().hit = true;
             collision.gameObject.GetComponent<PlayerHealth>().GenerateHealth();
         }
         if(collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<PlayerHealth>().playerInvincible)

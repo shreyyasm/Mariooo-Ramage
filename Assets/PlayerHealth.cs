@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
 
     public PostProcessVolume volume;
     ChromaticAberration chromaticAberration;
+    public bool hit;
     // Start is called before the first frame update
     void Start()
     {
