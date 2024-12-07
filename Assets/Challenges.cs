@@ -10,6 +10,7 @@ public class Challenges : MonoBehaviour
 {
     public static Challenges instance;
     public TextMeshProUGUI mainText;
+    public AudioClip ChallengeSFX;
     public Animator anim;
 
     //Challenge_One
@@ -51,12 +52,13 @@ public class Challenges : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         if (challenge_OneText == null)
             return;
 
         //Challenge_One
         challenge_OneSlider.value = PlayerPrefs.GetInt("Challenge_One");
-        challenge_OneText.text = "1. Kill 15 Enemies in a row. (" + PlayerPrefs.GetInt("Challenge_One") + "/15)";
+        challenge_OneText.text = "1. Kill 15 Enemies in a row. ( " + PlayerPrefs.GetInt("Challenge_One") + "/15 )";
         if(PlayerPrefs.GetInt("Challenge_One") >= 15)
             challengeOne_Tick.SetActive(true);
 
@@ -80,7 +82,7 @@ public class Challenges : MonoBehaviour
 
         //Challenge_Five
         challenge_FiveSlider.value = PlayerPrefs.GetInt("Challenge_Five");
-        challenge_FiveText.text = "4. Complete Level 3 Without Killing any enemy.";
+        challenge_FiveText.text = "5.Kill the boss in 1 minute";
         if (PlayerPrefs.GetInt("Challenge_Five") == 1)
             challengeFive_Tick.SetActive(true);
 
@@ -109,6 +111,8 @@ public class Challenges : MonoBehaviour
         if (index == 15)
         {
             mainText.text = "Kill 15 Enemies in a row. (15/15)";
+            if (ChallengeSFX != null)
+                AudioSource.PlayClipAtPoint(ChallengeSFX, Camera.main.transform.position);
             Debug.Log("Challenge Comepleted");
             if(anim != null)
             {
@@ -138,6 +142,8 @@ public class Challenges : MonoBehaviour
         if (index == 1)
         {
             mainText.text = "2. Complete a level without getting any hit.";
+            if (ChallengeSFX != null)
+                AudioSource.PlayClipAtPoint(ChallengeSFX, Camera.main.transform.position);
             Debug.Log("Challenge Comepleted");
             if (anim != null)
             {
@@ -167,6 +173,8 @@ public class Challenges : MonoBehaviour
         if (index == 30)
         {
             mainText.text = "3. Kill 30 enemies with invincibilty stars.(30/30)";
+            if (ChallengeSFX != null)
+                AudioSource.PlayClipAtPoint(ChallengeSFX, Camera.main.transform.position);
             Debug.Log("Challenge Comepleted");
             if (anim != null)
             {
@@ -196,6 +204,8 @@ public class Challenges : MonoBehaviour
         if (index == 1)
         {
             mainText.text = "4. Complete Level 3 Without Killing any enemy.";
+            if (ChallengeSFX != null)
+                AudioSource.PlayClipAtPoint(ChallengeSFX, Camera.main.transform.position);
             Debug.Log("Challenge Comepleted");
             if (anim != null)
             {
@@ -216,7 +226,7 @@ public class Challenges : MonoBehaviour
         if (challenge_FiveText != null)
         {
             challenge_FiveSlider.value = index;
-            challenge_FiveText.text = "4. Complete Level 3 Without Killing any enemy.";
+            challenge_FiveText.text = "5.Kill the boss in 1 minute";
         }
 
         PlayerPrefs.SetInt("Challenge_Five", index);
@@ -224,7 +234,9 @@ public class Challenges : MonoBehaviour
 
         if (index == 1)
         {
-            mainText.text = "4. Complete Level 3 Without Killing any enemy.";
+            mainText.text = "5.Kill the boss in 1 minute";
+            if(ChallengeSFX != null)
+                AudioSource.PlayClipAtPoint(ChallengeSFX,Camera.main.transform.position);
             Debug.Log("Challenge Comepleted");
             if (anim != null)
             {

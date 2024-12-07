@@ -45,8 +45,7 @@ public class Settings : MonoBehaviour
             if(volumeSlider != null)
             {
                 volumeSlider.value = PlayerPrefs.GetFloat("Volume");
-                if(player != null)
-                    senstivitySlider.value = PlayerPrefs.GetFloat("Senstivity");
+                senstivitySlider.value = PlayerPrefs.GetFloat("Senstivity");
             }
 
 
@@ -150,5 +149,13 @@ public class Settings : MonoBehaviour
         SceneManager.UnloadSceneAsync(currentGameIndex);
         SceneManager.LoadScene(index);
     }
-
+    public GameObject challenges;
+    public void OpenChallenges()
+    {
+        challenges.SetActive(true);
+    }
+    public void CloseChallenges()
+    {
+        challenges.SetActive(false);
+    }
 }

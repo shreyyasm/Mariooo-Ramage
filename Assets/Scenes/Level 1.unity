@@ -3739,12 +3739,13 @@ RectTransform:
   m_Children:
   - {fileID: 1089963343}
   - {fileID: 1320115646}
+  - {fileID: 396137893}
   m_Father: {fileID: 1219338072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1382, y: -334}
-  m_SizeDelta: {x: 431.5532, y: 123.1971}
+  m_SizeDelta: {x: 431.55322, y: 123.19708}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &188912274
 MonoBehaviour:
@@ -5897,6 +5898,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390518239}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &396137892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396137893}
+  - component: {fileID: 396137895}
+  - component: {fileID: 396137894}
+  m_Layer: 0
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &396137893
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396137892}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 188912273}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -212, y: 45}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &396137894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396137892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f131a763714404e4387403417896c853, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &396137895
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396137892}
+  m_CullTransparentMesh: 1
 --- !u!1 &397926523 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9081931393052905421, guid: d7e91125fdb8f5142a574c2306010309,
@@ -9366,10 +9442,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2060149704}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1800.3245, y: -186.52667}
-  m_SizeDelta: {x: 239.282, y: 107.9983}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -119.67554, y: 353.47333}
+  m_SizeDelta: {x: 239.28198, y: 107.99829}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &744994458
 MonoBehaviour:
@@ -13690,8 +13766,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.1786, y: 22.295}
-  m_SizeDelta: {x: 384.3611, y: 78.6077}
+  m_AnchoredPosition: {x: 9.6778, y: 22.295}
+  m_SizeDelta: {x: 389.71, y: 78.6077}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1089963344
 MonoBehaviour:
@@ -20154,6 +20230,7 @@ MonoBehaviour:
   volumeSlider: {fileID: 0}
   senstivitySlider: {fileID: 0}
   player: {fileID: 1359575655356492887}
+  challenges: {fileID: 0}
 --- !u!4 &1625932526
 Transform:
   m_ObjectHideFlags: 0
@@ -21686,7 +21763,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0b059cf1ff31d054a8ef1d88dc21c075, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -22438,6 +22515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainText: {fileID: 1320115647}
+  ChallengeSFX: {fileID: 8300000, guid: 444f8075af413ff448eebb5e069ae876, type: 3}
   anim: {fileID: 1219338076}
   challenge_OneText: {fileID: 0}
   challenge_OneSlider: {fileID: 0}

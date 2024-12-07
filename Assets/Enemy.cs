@@ -1,4 +1,5 @@
 using QFSW.MOP2;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -91,13 +92,15 @@ public class Enemy : MonoBehaviour
             health -= collision.gameObject.GetComponent<Projectile>().bulletDamage;
             if (boss)
                 slider.value = health;
-            AudioSource.PlayClipAtPoint(BulletHitSFX[Random.Range(0, 2)], transform.position, 1f);
+            AudioSource.PlayClipAtPoint(BulletHitSFX[UnityEngine.Random.Range(0, 2)], transform.position, 1f);
             if (health <= 0)
             {
                 if (boss)
                 {
                     Instantiate(BadaDamaka, transform.position, Quaternion.identity);
                     LevelCompletion.Instance.Win();
+                    if (BossChallenge.instance.UnderOneMin)
+                        Challenges.instance.Challenge_Five(1);
                 }
                 explosion = explosionPool.GetObject();
                 explosion.transform.position = transform.position;

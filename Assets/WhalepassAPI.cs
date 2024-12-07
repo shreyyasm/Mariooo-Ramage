@@ -50,11 +50,10 @@ public class WhalePassAPI : MonoBehaviour
         }
 
         EnrollPlayer();
-        
         CheckPlayer_Inventory();
         GettingBattlePass();
         PlayerBaseResponse();
-        LeanTween.delayedCall(0.4f, () => { levelManager.UpdateUI(); });
+        LeanTween.delayedCall(1f, () => { levelManager.UpdateUI(); });
         
     }
     private void Start()
